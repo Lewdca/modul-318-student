@@ -30,27 +30,26 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dgvVerbindungen = new System.Windows.Forms.DataGridView();
-            this.dgvVerkehrsmittel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvDatumZeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvGleis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvReisezeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvPreis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbDatumZeit = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.dtpZeit = new System.Windows.Forms.DateTimePicker();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.gbOrt = new System.Windows.Forms.GroupBox();
+            this.btnIconEnd = new System.Windows.Forms.Button();
+            this.btnIconStart = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbEndStation = new System.Windows.Forms.ComboBox();
             this.cbStartStatoin = new System.Windows.Forms.ComboBox();
             this.btnVerbindung = new System.Windows.Forms.Button();
             this.btnAbfahrtstafel = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnIconEnd = new System.Windows.Forms.Button();
+            this.dgvDatumZeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPlatform = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvAnkunftZeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDuratoin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVerbindungen)).BeginInit();
             this.gbDatumZeit.SuspendLayout();
             this.gbOrt.SuspendLayout();
@@ -60,52 +59,17 @@
             // 
             this.dgvVerbindungen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVerbindungen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgvVerkehrsmittel,
             this.dgvDatumZeit,
-            this.dgvGleis,
             this.dgvStart,
             this.dgvEnd,
-            this.dgvReisezeit,
-            this.dgvPreis});
-            this.dgvVerbindungen.Location = new System.Drawing.Point(69, 328);
+            this.dgvPlatform,
+            this.dgvAnkunftZeit,
+            this.dgvDuratoin});
+            this.dgvVerbindungen.Location = new System.Drawing.Point(92, 326);
             this.dgvVerbindungen.Name = "dgvVerbindungen";
-            this.dgvVerbindungen.Size = new System.Drawing.Size(744, 209);
+            this.dgvVerbindungen.Size = new System.Drawing.Size(708, 209);
             this.dgvVerbindungen.TabIndex = 0;
-            // 
-            // dgvVerkehrsmittel
-            // 
-            this.dgvVerkehrsmittel.HeaderText = "Verkehrsmittel";
-            this.dgvVerkehrsmittel.Name = "dgvVerkehrsmittel";
-            // 
-            // dgvDatumZeit
-            // 
-            this.dgvDatumZeit.HeaderText = "Datum/Zeit";
-            this.dgvDatumZeit.Name = "dgvDatumZeit";
-            // 
-            // dgvGleis
-            // 
-            this.dgvGleis.HeaderText = "Gleis";
-            this.dgvGleis.Name = "dgvGleis";
-            // 
-            // dgvStart
-            // 
-            this.dgvStart.HeaderText = "Start-Station";
-            this.dgvStart.Name = "dgvStart";
-            // 
-            // dgvEnd
-            // 
-            this.dgvEnd.HeaderText = "End-Station";
-            this.dgvEnd.Name = "dgvEnd";
-            // 
-            // dgvReisezeit
-            // 
-            this.dgvReisezeit.HeaderText = "Reisezeit";
-            this.dgvReisezeit.Name = "dgvReisezeit";
-            // 
-            // dgvPreis
-            // 
-            this.dgvPreis.HeaderText = "Preis";
-            this.dgvPreis.Name = "dgvPreis";
+            this.dgvVerbindungen.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvVerbindungen_CellContentClick);
             // 
             // gbDatumZeit
             // 
@@ -121,6 +85,24 @@
             this.gbDatumZeit.Text = "Datum/Zeit";
             this.gbDatumZeit.Enter += new System.EventHandler(this.GbDatumZeit_Enter);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 100);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(28, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Zeit:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 54);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Datum:";
+            // 
             // dtpZeit
             // 
             this.dtpZeit.Checked = false;
@@ -134,7 +116,7 @@
             // 
             // dtpDate
             // 
-            this.dtpDate.CustomFormat = "dd-MM-yyyy";
+            this.dtpDate.CustomFormat = "MM/dd/yyyy";
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDate.Location = new System.Drawing.Point(54, 48);
             this.dtpDate.Name = "dtpDate";
@@ -145,7 +127,7 @@
             // gbOrt
             // 
             this.gbOrt.Controls.Add(this.btnIconEnd);
-            this.gbOrt.Controls.Add(this.button1);
+            this.gbOrt.Controls.Add(this.btnIconStart);
             this.gbOrt.Controls.Add(this.label2);
             this.gbOrt.Controls.Add(this.label1);
             this.gbOrt.Controls.Add(this.cbEndStation);
@@ -156,6 +138,26 @@
             this.gbOrt.TabIndex = 2;
             this.gbOrt.TabStop = false;
             this.gbOrt.Text = "Ort";
+            // 
+            // btnIconEnd
+            // 
+            this.btnIconEnd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnIconEnd.BackgroundImage")));
+            this.btnIconEnd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnIconEnd.Location = new System.Drawing.Point(205, 79);
+            this.btnIconEnd.Name = "btnIconEnd";
+            this.btnIconEnd.Size = new System.Drawing.Size(33, 34);
+            this.btnIconEnd.TabIndex = 5;
+            this.btnIconEnd.UseVisualStyleBackColor = true;
+            // 
+            // btnIconStart
+            // 
+            this.btnIconStart.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnIconStart.BackgroundImage")));
+            this.btnIconStart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnIconStart.Location = new System.Drawing.Point(205, 35);
+            this.btnIconStart.Name = "btnIconStart";
+            this.btnIconStart.Size = new System.Drawing.Size(33, 33);
+            this.btnIconStart.TabIndex = 4;
+            this.btnIconStart.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -209,43 +211,37 @@
             this.btnAbfahrtstafel.TabIndex = 5;
             this.btnAbfahrtstafel.Text = "Abfahrtstafel";
             this.btnAbfahrtstafel.UseVisualStyleBackColor = true;
+            this.btnAbfahrtstafel.Click += new System.EventHandler(this.BtnAbfahrtstafel_Click);
             // 
-            // label3
+            // dgvDatumZeit
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 54);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Datum:";
+            this.dgvDatumZeit.HeaderText = "Datum/Zeit";
+            this.dgvDatumZeit.Name = "dgvDatumZeit";
             // 
-            // label4
+            // dgvStart
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 100);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(28, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Zeit:";
+            this.dgvStart.HeaderText = "Start-Station";
+            this.dgvStart.Name = "dgvStart";
             // 
-            // button1
+            // dgvEnd
             // 
-            this.button1.Location = new System.Drawing.Point(206, 48);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dgvEnd.HeaderText = "End-Station";
+            this.dgvEnd.Name = "dgvEnd";
             // 
-            // btnIconEnd
+            // dgvPlatform
             // 
-            this.btnIconEnd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnIconEnd.BackgroundImage")));
-            this.btnIconEnd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnIconEnd.Location = new System.Drawing.Point(217, 79);
-            this.btnIconEnd.Name = "btnIconEnd";
-            this.btnIconEnd.Size = new System.Drawing.Size(37, 35);
-            this.btnIconEnd.TabIndex = 5;
-            this.btnIconEnd.UseVisualStyleBackColor = true;
+            this.dgvPlatform.HeaderText = "Platform";
+            this.dgvPlatform.Name = "dgvPlatform";
+            // 
+            // dgvAnkunftZeit
+            // 
+            this.dgvAnkunftZeit.HeaderText = "Ankufts Zeit";
+            this.dgvAnkunftZeit.Name = "dgvAnkunftZeit";
+            // 
+            // dgvDuratoin
+            // 
+            this.dgvDuratoin.HeaderText = "Reisezeit";
+            this.dgvDuratoin.Name = "dgvDuratoin";
             // 
             // Form1
             // 
@@ -280,18 +276,17 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbEndStation;
         private System.Windows.Forms.ComboBox cbStartStatoin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvVerkehrsmittel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvDatumZeit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvGleis;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvStart;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvEnd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvReisezeit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvPreis;
         private System.Windows.Forms.DateTimePicker dtpZeit;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnIconEnd;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnIconStart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvDatumZeit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvStart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvEnd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvPlatform;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvAnkunftZeit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvDuratoin;
     }
 }
 

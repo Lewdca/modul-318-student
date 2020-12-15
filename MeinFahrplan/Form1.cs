@@ -1,4 +1,5 @@
 ﻿using SwissTransport.Core;
+using SwissTransport.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,8 +28,37 @@ namespace MeinFahrplan
 
         private void BtnVerbindung_Click(object sender, EventArgs e)
         {
-            string userDate = dtpDate.Text;
-            dgvVerbindungen.Rows[0].Cells[1].Value = userDate;
+            dgvVerbindungen.Columns[1].HeaderText = "Start-Station";
+            dgvVerbindungen.Columns[2].HeaderText = "End-Station";
+
+            var connections = transport.GetConnections(cbStartStatoin.Text,cbEndStation.Text, dtpZeit.Value, dtpDate.Value, 16);
+
+            dgvVerbindungen.Rows.Clear();
+            
+            foreach(Connection connection in connections.ConnectionList)
+            {
+                dgvVerbindungen.Rows.Add(new[] { connection.From.Departure.ToString() ,connection.From.Station.Name,connection.To.Station.Name,connection.From.Platform ,connection.To.Arrival.Value.ToString(), connection.Duration });
+            }
+        }
+
+        private void DgvVerbindungen_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void BtnAbfahrtstafel_Click(object sender, EventArgs e)
+        {
+            dgvVerbindungen.Columns[1].HeaderText = "Zugname";
+            dgvVerbindungen.Columns[2].HeaderText = "Start-Station";
+
+            var getStationBoard = transport.GetStationBoard(cbStartStatoin.Text, "1", dtpZeit.Value, dtpDate.Value, 15);
+
+            dgvVerbindungen.Rows.Clear();
+
+            foreach(StationBoard GetStationBoard in getStationBoard.Entries)
+            {
+                dgvVerbindungen.Rows.Add(new[] { GetStationBoard.Stop.Departure.ToString(), GetStationBoard.Name.ToString(),getStationBoard.Station.Name.ToString()});
+            }
         }
     }
 }
