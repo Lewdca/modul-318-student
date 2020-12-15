@@ -65,7 +65,7 @@
             this.dgvPlatform,
             this.dgvAnkunftZeit,
             this.dgvDuratoin});
-            this.dgvVerbindungen.Location = new System.Drawing.Point(92, 326);
+            this.dgvVerbindungen.Location = new System.Drawing.Point(93, 307);
             this.dgvVerbindungen.Name = "dgvVerbindungen";
             this.dgvVerbindungen.Size = new System.Drawing.Size(708, 209);
             this.dgvVerbindungen.TabIndex = 0;
@@ -77,9 +77,9 @@
             this.gbDatumZeit.Controls.Add(this.label3);
             this.gbDatumZeit.Controls.Add(this.dtpZeit);
             this.gbDatumZeit.Controls.Add(this.dtpDate);
-            this.gbDatumZeit.Location = new System.Drawing.Point(69, 68);
+            this.gbDatumZeit.Location = new System.Drawing.Point(92, 148);
             this.gbDatumZeit.Name = "gbDatumZeit";
-            this.gbDatumZeit.Size = new System.Drawing.Size(303, 143);
+            this.gbDatumZeit.Size = new System.Drawing.Size(234, 143);
             this.gbDatumZeit.TabIndex = 1;
             this.gbDatumZeit.TabStop = false;
             this.gbDatumZeit.Text = "Datum/Zeit";
@@ -132,9 +132,9 @@
             this.gbOrt.Controls.Add(this.label1);
             this.gbOrt.Controls.Add(this.cbEndStation);
             this.gbOrt.Controls.Add(this.cbStartStatoin);
-            this.gbOrt.Location = new System.Drawing.Point(409, 68);
+            this.gbOrt.Location = new System.Drawing.Point(347, 148);
             this.gbOrt.Name = "gbOrt";
-            this.gbOrt.Size = new System.Drawing.Size(296, 143);
+            this.gbOrt.Size = new System.Drawing.Size(292, 143);
             this.gbOrt.TabIndex = 2;
             this.gbOrt.TabStop = false;
             this.gbOrt.Text = "Ort";
@@ -195,7 +195,7 @@
             // 
             // btnVerbindung
             // 
-            this.btnVerbindung.Location = new System.Drawing.Point(711, 268);
+            this.btnVerbindung.Location = new System.Drawing.Point(665, 227);
             this.btnVerbindung.Name = "btnVerbindung";
             this.btnVerbindung.Size = new System.Drawing.Size(136, 23);
             this.btnVerbindung.TabIndex = 4;
@@ -205,7 +205,7 @@
             // 
             // btnAbfahrtstafel
             // 
-            this.btnAbfahrtstafel.Location = new System.Drawing.Point(712, 231);
+            this.btnAbfahrtstafel.Location = new System.Drawing.Point(665, 268);
             this.btnAbfahrtstafel.Name = "btnAbfahrtstafel";
             this.btnAbfahrtstafel.Size = new System.Drawing.Size(135, 23);
             this.btnAbfahrtstafel.TabIndex = 5;

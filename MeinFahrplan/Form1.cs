@@ -30,6 +30,7 @@ namespace MeinFahrplan
         {
             dgvVerbindungen.Columns[1].HeaderText = "Start-Station";
             dgvVerbindungen.Columns[2].HeaderText = "End-Station";
+            dgvVerbindungen.Columns[3].HeaderText = "Plattform";
 
             var connections = transport.GetConnections(cbStartStatoin.Text,cbEndStation.Text, dtpZeit.Value, dtpDate.Value, 16);
 
@@ -48,16 +49,17 @@ namespace MeinFahrplan
 
         private void BtnAbfahrtstafel_Click(object sender, EventArgs e)
         {
-            dgvVerbindungen.Columns[1].HeaderText = "Zugname";
+            dgvVerbindungen.Columns[1].HeaderText = "Zug-Name";
             dgvVerbindungen.Columns[2].HeaderText = "Start-Station";
+            dgvVerbindungen.Columns[3].HeaderText = "End-Station";
 
-            var getStationBoard = transport.GetStationBoard(cbStartStatoin.Text, "1", dtpZeit.Value, dtpDate.Value, 15);
+            var getStationBoard = transport.GetStationBoard(cbStartStatoin.Text, "1", dtpZeit.Value, dtpDate.Value, 16);
 
             dgvVerbindungen.Rows.Clear();
 
-            foreach(StationBoard GetStationBoard in getStationBoard.Entries)
+            foreach (StationBoard GetStationBoard in getStationBoard.Entries)
             {
-                dgvVerbindungen.Rows.Add(new[] { GetStationBoard.Stop.Departure.ToString(), GetStationBoard.Name.ToString(),getStationBoard.Station.Name.ToString()});
+                dgvVerbindungen.Rows.Add(new[] { GetStationBoard.Stop.Departure.ToString(), GetStationBoard.Name.ToString(), getStationBoard.Station.Name.ToString(), GetStationBoard.To, });
             }
         }
     }

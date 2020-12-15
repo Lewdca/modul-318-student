@@ -8,8 +8,8 @@
     {
         Stations GetStations(string query);
 
-        StationBoardRoot GetStationBoard(string station, string id, DateTime time, DateTime date, int limit);
+        StationBoardRoot GetStationBoard(string station, string id, DateTime Zeit, DateTime datum, int ende);
 
-        Connections GetConnections(string fromStation, string toStation, DateTime time, DateTime date, int limit);
+        Connections GetConnections(string fromStation, string toStation, DateTime Zeit, DateTime datum, int ende);
     }
 }
