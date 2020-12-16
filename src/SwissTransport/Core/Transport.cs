@@ -12,18 +12,18 @@
         protected readonly IHttpClient HttpClient =
             new HttpClient(CredentialCache.DefaultNetworkCredentials, WebRequest.DefaultWebProxy);
 
-        public Stations GetStations(string query)
+        public Stations GetStations(string station, int ende)
         {
-            if (string.IsNullOrEmpty(query))
+            if (string.IsNullOrEmpty(station))
             {
-                throw new ArgumentNullException(nameof(query));
+                throw new ArgumentNullException(nameof(station));
             }
 
-            var uri = new Uri($"{WebApiHost}locations?query={query}");
+            var uri = new Uri($"{WebApiHost}locations?query={station}&limit={ende}");
             return HttpClient.GetObject(uri, JsonConvert.DeserializeObject<Stations>);
         }
 
-        public StationBoardRoot GetStationBoard(string station, string id, DateTime Zeit, DateTime datum, int ende)
+        public StationBoardRoot GetStationBoard(string station, string id, DateTime zeit, int ende)
         {
             if (string.IsNullOrEmpty(station))
             {
@@ -35,7 +35,7 @@
                 throw new ArgumentNullException(nameof(id));
             }
 
-            var uri = new Uri($"{WebApiHost}stationboard?station={station}&id={id}&time={Zeit}&date={datum}&limit={ende}");
+            var uri = new Uri($"{WebApiHost}stationboard?station={station}&id={id}&time={zeit}&limit={ende}");
             return HttpClient.GetObject(uri, JsonConvert.DeserializeObject<StationBoardRoot>);
         }
 

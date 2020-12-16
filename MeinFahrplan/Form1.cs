@@ -15,14 +15,14 @@ namespace MeinFahrplan
     public partial class Form1 : Form
     {
         ITransport transport = new Transport();
-        
+
         public Form1()
         {
             InitializeComponent();
         }
 
         private void GbDatumZeit_Enter(object sender, EventArgs e)
-        { 
+        {
 
         }
 
@@ -32,14 +32,23 @@ namespace MeinFahrplan
             dgvVerbindungen.Columns[2].HeaderText = "End-Station";
             dgvVerbindungen.Columns[3].HeaderText = "Plattform";
 
-            var connections = transport.GetConnections(cbStartStatoin.Text,cbEndStation.Text, dtpZeit.Value, dtpDate.Value, 16);
+            var connections = transport.GetConnections(cbStartStatoin.Text, cbEndStation.Text, dtpZeit.Value, dtpDate.Value, 10);
 
             dgvVerbindungen.Rows.Clear();
-            
-            foreach(Connection connection in connections.ConnectionList)
+
+            foreach (Connection connection in connections.ConnectionList)
             {
-                dgvVerbindungen.Rows.Add(new[] { connection.From.Departure.ToString() ,connection.From.Station.Name,connection.To.Station.Name,connection.From.Platform ,connection.To.Arrival.Value.ToString(), connection.Duration });
+                dgvVerbindungen.Rows.Add(new[]
+                {
+                     connection.From.Departure.ToString(),
+                     connection.From.Station.Name,
+                     connection.To.Station.Name,
+                     connection.From.Platform,
+                     connection.To.Arrival.Value.ToString(),
+                     connection.Duration
+                 });
             }
+
         }
 
         private void DgvVerbindungen_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -49,18 +58,24 @@ namespace MeinFahrplan
 
         private void BtnAbfahrtstafel_Click(object sender, EventArgs e)
         {
-            dgvVerbindungen.Columns[1].HeaderText = "Zug-Name";
-            dgvVerbindungen.Columns[2].HeaderText = "Start-Station";
-            dgvVerbindungen.Columns[3].HeaderText = "End-Station";
+            var myForm = new Abfahrtstafel();
+            myForm.Show();
+        }
 
-            var getStationBoard = transport.GetStationBoard(cbStartStatoin.Text, "1", dtpZeit.Value, dtpDate.Value, 16);
+        private void Btnstation_Click(object sender, EventArgs e)
+        {
+            var myForm = new StationSuche();
+            myForm.Show();
+        }
 
-            dgvVerbindungen.Rows.Clear();
+        private void CbStartStatoin_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-            foreach (StationBoard GetStationBoard in getStationBoard.Entries)
-            {
-                dgvVerbindungen.Rows.Add(new[] { GetStationBoard.Stop.Departure.ToString(), GetStationBoard.Name.ToString(), getStationBoard.Station.Name.ToString(), GetStationBoard.To, });
-            }
+        }
+        void AutoCompleteText()
+        {
+            cbStartStatoin.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
         }
     }
 }
