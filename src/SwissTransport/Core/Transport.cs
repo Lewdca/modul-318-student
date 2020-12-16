@@ -12,14 +12,14 @@
         protected readonly IHttpClient HttpClient =
             new HttpClient(CredentialCache.DefaultNetworkCredentials, WebRequest.DefaultWebProxy);
 
-        public Stations GetStations(string station, int ende)
+        public Stations GetStations(string query)
         {
-            if (string.IsNullOrEmpty(station))
+            if (string.IsNullOrEmpty(query))
             {
-                throw new ArgumentNullException(nameof(station));
+                throw new ArgumentNullException(nameof(query));
             }
 
-            var uri = new Uri($"{WebApiHost}locations?query={station}&limit={ende}");
+            var uri = new Uri($"{WebApiHost}locations?query={query}");
             return HttpClient.GetObject(uri, JsonConvert.DeserializeObject<Stations>);
         }
 

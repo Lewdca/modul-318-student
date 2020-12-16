@@ -50,10 +50,11 @@
             this.cbStartStatoin = new System.Windows.Forms.ComboBox();
             this.btnVerbindung = new System.Windows.Forms.Button();
             this.btnAbfahrtstafel = new System.Windows.Forms.Button();
-            this.btnstation = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVerbindungen)).BeginInit();
             this.gbDatumZeit.SuspendLayout();
             this.gbOrt.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvVerbindungen
@@ -66,11 +67,10 @@
             this.dgvPlatform,
             this.dgvAnkunftZeit,
             this.dgvDuratoin});
-            this.dgvVerbindungen.Location = new System.Drawing.Point(22, 310);
+            this.dgvVerbindungen.Location = new System.Drawing.Point(31, 279);
             this.dgvVerbindungen.Name = "dgvVerbindungen";
             this.dgvVerbindungen.Size = new System.Drawing.Size(710, 209);
             this.dgvVerbindungen.TabIndex = 0;
-            this.dgvVerbindungen.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvVerbindungen_CellContentClick);
             // 
             // dgvDatumZeit
             // 
@@ -108,13 +108,12 @@
             this.gbDatumZeit.Controls.Add(this.label3);
             this.gbDatumZeit.Controls.Add(this.dtpZeit);
             this.gbDatumZeit.Controls.Add(this.dtpDate);
-            this.gbDatumZeit.Location = new System.Drawing.Point(21, 148);
+            this.gbDatumZeit.Location = new System.Drawing.Point(30, 117);
             this.gbDatumZeit.Name = "gbDatumZeit";
             this.gbDatumZeit.Size = new System.Drawing.Size(234, 143);
             this.gbDatumZeit.TabIndex = 1;
             this.gbDatumZeit.TabStop = false;
             this.gbDatumZeit.Text = "Datum/Zeit";
-            this.gbDatumZeit.Enter += new System.EventHandler(this.GbDatumZeit_Enter);
             // 
             // label4
             // 
@@ -163,7 +162,7 @@
             this.gbOrt.Controls.Add(this.label1);
             this.gbOrt.Controls.Add(this.cbEndStation);
             this.gbOrt.Controls.Add(this.cbStartStatoin);
-            this.gbOrt.Location = new System.Drawing.Point(283, 148);
+            this.gbOrt.Location = new System.Drawing.Point(292, 117);
             this.gbOrt.Name = "gbOrt";
             this.gbOrt.Size = new System.Drawing.Size(292, 143);
             this.gbOrt.TabIndex = 2;
@@ -210,26 +209,29 @@
             // 
             // cbEndStation
             // 
+            this.cbEndStation.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbEndStation.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cbEndStation.FormattingEnabled = true;
             this.cbEndStation.Location = new System.Drawing.Point(78, 84);
             this.cbEndStation.Name = "cbEndStation";
             this.cbEndStation.Size = new System.Drawing.Size(121, 21);
             this.cbEndStation.TabIndex = 1;
+            this.cbEndStation.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyUp);
             // 
             // cbStartStatoin
             // 
-            this.cbStartStatoin.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cbStartStatoin.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.AllSystemSources;
+            this.cbStartStatoin.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbStartStatoin.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cbStartStatoin.FormattingEnabled = true;
             this.cbStartStatoin.Location = new System.Drawing.Point(78, 42);
             this.cbStartStatoin.Name = "cbStartStatoin";
             this.cbStartStatoin.Size = new System.Drawing.Size(121, 21);
             this.cbStartStatoin.TabIndex = 0;
-            this.cbStartStatoin.SelectedIndexChanged += new System.EventHandler(this.CbStartStatoin_SelectedIndexChanged);
+            this.cbStartStatoin.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyUp);
             // 
             // btnVerbindung
             // 
-            this.btnVerbindung.Location = new System.Drawing.Point(596, 193);
+            this.btnVerbindung.Location = new System.Drawing.Point(605, 162);
             this.btnVerbindung.Name = "btnVerbindung";
             this.btnVerbindung.Size = new System.Drawing.Size(136, 23);
             this.btnVerbindung.TabIndex = 4;
@@ -239,7 +241,7 @@
             // 
             // btnAbfahrtstafel
             // 
-            this.btnAbfahrtstafel.Location = new System.Drawing.Point(596, 230);
+            this.btnAbfahrtstafel.Location = new System.Drawing.Point(605, 199);
             this.btnAbfahrtstafel.Name = "btnAbfahrtstafel";
             this.btnAbfahrtstafel.Size = new System.Drawing.Size(135, 23);
             this.btnAbfahrtstafel.TabIndex = 5;
@@ -247,22 +249,21 @@
             this.btnAbfahrtstafel.UseVisualStyleBackColor = true;
             this.btnAbfahrtstafel.Click += new System.EventHandler(this.BtnAbfahrtstafel_Click);
             // 
-            // btnstation
+            // pictureBox1
             // 
-            this.btnstation.Location = new System.Drawing.Point(596, 267);
-            this.btnstation.Name = "btnstation";
-            this.btnstation.Size = new System.Drawing.Size(136, 23);
-            this.btnstation.TabIndex = 6;
-            this.btnstation.Text = "Station suchen";
-            this.btnstation.UseVisualStyleBackColor = true;
-            this.btnstation.Click += new System.EventHandler(this.Btnstation_Click);
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(785, 91);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(876, 563);
-            this.Controls.Add(this.btnstation);
+            this.ClientSize = new System.Drawing.Size(785, 537);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnAbfahrtstafel);
             this.Controls.Add(this.btnVerbindung);
             this.Controls.Add(this.gbOrt);
@@ -275,6 +276,7 @@
             this.gbDatumZeit.PerformLayout();
             this.gbOrt.ResumeLayout(false);
             this.gbOrt.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -302,7 +304,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvPlatform;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvAnkunftZeit;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvDuratoin;
-        private System.Windows.Forms.Button btnstation;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

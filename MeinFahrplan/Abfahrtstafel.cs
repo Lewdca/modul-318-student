@@ -14,10 +14,13 @@ namespace MeinFahrplan
 {
     public partial class Abfahrtstafel : Form
     {
+        Form1 f = new Form1();
         ITransport transport = new Transport();
         public Abfahrtstafel()
         {
             InitializeComponent();
+            
+           
         }
 
         private void AbtnAbfahrtstafel_Click(object sender, EventArgs e)
@@ -30,6 +33,14 @@ namespace MeinFahrplan
             foreach (StationBoard GetStationBoard in getStationBoard.Entries)
             {
                 AdgvVerbindungen.Rows.Add(new[] {GetStationBoard.Stop.Departure.ToString() , GetStationBoard.Name.ToString(), getStationBoard.Station.Name.ToString(), GetStationBoard.To, });
+            }
+        }
+
+        private void AcbStart_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.Up && e.KeyCode != Keys.Right && e.KeyCode != Keys.Down && e.KeyCode != Keys.Left)
+            {
+                f.getStation((ComboBox)sender);
             }
         }
     }

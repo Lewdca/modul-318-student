@@ -6,7 +6,7 @@
 
     public interface ITransport
     {
-        Stations GetStations(string station, int ende);
+        Stations GetStations(string query);
 
         StationBoardRoot GetStationBoard(string station, string id, DateTime zeit, int ende);
 

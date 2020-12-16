@@ -20,12 +20,6 @@ namespace MeinFahrplan
         {
             InitializeComponent();
         }
-
-        private void GbDatumZeit_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void BtnVerbindung_Click(object sender, EventArgs e)
         {
             dgvVerbindungen.Columns[1].HeaderText = "Start-Station";
@@ -50,32 +44,62 @@ namespace MeinFahrplan
             }
 
         }
-
-        private void DgvVerbindungen_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void BtnAbfahrtstafel_Click(object sender, EventArgs e)
         {
             var myForm = new Abfahrtstafel();
             myForm.Show();
         }
-
-        private void Btnstation_Click(object sender, EventArgs e)
+        public List<string> autoComplete(string input)
         {
-            var myForm = new StationSuche();
-            myForm.Show();
+
+            List<string> autoCompleteList = new List<string>();
+     
+            var stations = transport.GetStations(input);
+            foreach (var station in stations.StationList)
+            {
+
+                autoCompleteList.Add(station.Name);
+            }
+
+            if (autoCompleteList.Count == 0)
+            {
+                autoCompleteList.Add("Kein Resultat");
+            }
+
+            return autoCompleteList;
         }
-
-        private void CbStartStatoin_SelectedIndexChanged(object sender, EventArgs e)
+        public void getStation(ComboBox box)
         {
+            if(box.Text != "")
+            {
+                try
+                {
+                    box.Items.Clear();
+                    box.SelectionStart = box.Text.Length + 1;
 
+                    List<string> stations = autoComplete(box.Text);
+
+                    foreach (String station in stations)
+                    {
+                        if (station != null)
+                        {
+                            box.Items.Add(station);
+                        }
+                    }
+                    box.DroppedDown = true;
+                }
+                catch
+                {
+                    box.Items.Clear();
+                    box.SelectionStart = box.Text.Length + 1;
+                    box.Items.Add("Kein Resultat");
+                }
+            }      
         }
-        void AutoCompleteText()
+        public void keyUp(object sender, KeyEventArgs e)
         {
-            cbStartStatoin.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
+            if (e.KeyCode != Keys.Up && e.KeyCode != Keys.Right && e.KeyCode != Keys.Down && e.KeyCode != Keys.Left)
+                getStation((ComboBox)sender);
         }
     }
 }

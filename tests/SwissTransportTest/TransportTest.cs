@@ -17,7 +17,7 @@
         public void Locations()
         {
             testee = new Transport();
-            var stations = this.testee.GetStations("Sursee,", 1);
+            var stations = this.testee.GetStations("Sursee,");
 
             Assert.AreEqual(10, stations.StationList.Count);
         }
