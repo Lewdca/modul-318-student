@@ -42,8 +42,6 @@
             this.dtpZeit = new System.Windows.Forms.DateTimePicker();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.gbOrt = new System.Windows.Forms.GroupBox();
-            this.btnIconEnd = new System.Windows.Forms.Button();
-            this.btnIconStart = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbEndStation = new System.Windows.Forms.ComboBox();
@@ -72,7 +70,7 @@
             this.dgvDuratoin});
             this.dgvVerbindungen.Location = new System.Drawing.Point(31, 279);
             this.dgvVerbindungen.Name = "dgvVerbindungen";
-            this.dgvVerbindungen.Size = new System.Drawing.Size(710, 209);
+            this.dgvVerbindungen.Size = new System.Drawing.Size(724, 209);
             this.dgvVerbindungen.TabIndex = 0;
             // 
             // dgvDatumZeit
@@ -159,38 +157,16 @@
             // 
             // gbOrt
             // 
-            this.gbOrt.Controls.Add(this.btnIconEnd);
-            this.gbOrt.Controls.Add(this.btnIconStart);
             this.gbOrt.Controls.Add(this.label2);
             this.gbOrt.Controls.Add(this.label1);
             this.gbOrt.Controls.Add(this.cbEndStation);
             this.gbOrt.Controls.Add(this.cbStartStatoin);
             this.gbOrt.Location = new System.Drawing.Point(294, 104);
             this.gbOrt.Name = "gbOrt";
-            this.gbOrt.Size = new System.Drawing.Size(292, 143);
+            this.gbOrt.Size = new System.Drawing.Size(239, 143);
             this.gbOrt.TabIndex = 2;
             this.gbOrt.TabStop = false;
             this.gbOrt.Text = "Ort";
-            // 
-            // btnIconEnd
-            // 
-            this.btnIconEnd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnIconEnd.BackgroundImage")));
-            this.btnIconEnd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnIconEnd.Location = new System.Drawing.Point(205, 79);
-            this.btnIconEnd.Name = "btnIconEnd";
-            this.btnIconEnd.Size = new System.Drawing.Size(33, 34);
-            this.btnIconEnd.TabIndex = 5;
-            this.btnIconEnd.UseVisualStyleBackColor = true;
-            // 
-            // btnIconStart
-            // 
-            this.btnIconStart.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnIconStart.BackgroundImage")));
-            this.btnIconStart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnIconStart.Location = new System.Drawing.Point(205, 35);
-            this.btnIconStart.Name = "btnIconStart";
-            this.btnIconStart.Size = new System.Drawing.Size(33, 33);
-            this.btnIconStart.TabIndex = 4;
-            this.btnIconStart.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -234,9 +210,9 @@
             // 
             // btnVerbindung
             // 
-            this.btnVerbindung.Location = new System.Drawing.Point(605, 169);
+            this.btnVerbindung.Location = new System.Drawing.Point(550, 174);
             this.btnVerbindung.Name = "btnVerbindung";
-            this.btnVerbindung.Size = new System.Drawing.Size(136, 23);
+            this.btnVerbindung.Size = new System.Drawing.Size(205, 23);
             this.btnVerbindung.TabIndex = 4;
             this.btnVerbindung.Text = "Verbindungen suchen";
             this.btnVerbindung.UseVisualStyleBackColor = true;
@@ -244,9 +220,9 @@
             // 
             // btnAbfahrtstafel
             // 
-            this.btnAbfahrtstafel.Location = new System.Drawing.Point(605, 210);
+            this.btnAbfahrtstafel.Location = new System.Drawing.Point(550, 213);
             this.btnAbfahrtstafel.Name = "btnAbfahrtstafel";
-            this.btnAbfahrtstafel.Size = new System.Drawing.Size(135, 23);
+            this.btnAbfahrtstafel.Size = new System.Drawing.Size(205, 23);
             this.btnAbfahrtstafel.TabIndex = 5;
             this.btnAbfahrtstafel.Text = "Abfahrtstafel";
             this.btnAbfahrtstafel.UseVisualStyleBackColor = true;
@@ -267,7 +243,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(72, 253);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(514, 20);
+            this.textBox1.Size = new System.Drawing.Size(461, 20);
             this.textBox1.TabIndex = 7;
             // 
             // label5
@@ -281,9 +257,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(605, 249);
+            this.button1.Location = new System.Drawing.Point(550, 251);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 23);
+            this.button1.Size = new System.Drawing.Size(205, 23);
             this.button1.TabIndex = 9;
             this.button1.Text = "Verbindung versenden";
             this.button1.UseVisualStyleBackColor = true;
@@ -333,8 +309,6 @@
         private System.Windows.Forms.DateTimePicker dtpZeit;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnIconEnd;
-        private System.Windows.Forms.Button btnIconStart;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvDatumZeit;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvStart;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvEnd;
