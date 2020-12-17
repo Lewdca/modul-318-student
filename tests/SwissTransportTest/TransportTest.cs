@@ -43,10 +43,5 @@
                 
               Assert.IsNotNull(connections);
           }
-        [TestMethod]
-          public void Mail()
-        {
-            
-        }
     }
 }

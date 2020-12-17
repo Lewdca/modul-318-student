@@ -16,7 +16,6 @@ namespace MeinFahrplan
     {
         ITransport transport = new Transport();
         Connection connection = new Connection();
-        TransportMain main = new TransportMain();
         public List<string> autoComplete(string input)
         {
 

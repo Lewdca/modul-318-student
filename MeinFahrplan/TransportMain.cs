@@ -16,9 +16,7 @@ namespace MeinFahrplan
     {
         ITransport transport = new Transport();
         AutoCompleteClass autoComplete = new AutoCompleteClass();
-        MailVersendenClass mailVersenden = new MailVersendenClass();
         
-
         public TransportMain()
         {
             InitializeComponent();
@@ -56,18 +54,6 @@ namespace MeinFahrplan
         {
             if (e.KeyCode != Keys.Up && e.KeyCode != Keys.Right && e.KeyCode != Keys.Down && e.KeyCode != Keys.Left)
                 autoComplete.getStation((ComboBox)sender);
-        }
-
-        private void btnMail_Click(object sender, EventArgs e)
-        {
-            Connection connection = new Connection();
-            string mailName = tbMail.Text;
-            string mailText = $"Der Zug fährt von der Station {dgvStart.Selected.ToString()} " +
-                $"nach {dgvEnd.Selected.ToString()}" +
-                $"\nDatum/Zeit Abfahrt:{dgvDatumZeit.Selected.ToString()}" +
-                $"\nAnkunftszeit: {dgvAnkunftZeit.Selected.ToString()} ankommen";
-
-            System.Diagnostics.Process.Start($"mailto:{mailName​}?subject=SBB Fahrplan&body={​mailtext}​");
         }
     }
 }

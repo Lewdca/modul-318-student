@@ -49,9 +49,6 @@
             this.btnVerbindung = new System.Windows.Forms.Button();
             this.btnAbfahrtstafel = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tbMail = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnMail = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVerbindungen)).BeginInit();
             this.gbDatumZeit.SuspendLayout();
             this.gbOrt.SuspendLayout();
@@ -68,7 +65,7 @@
             this.dgvPlatform,
             this.dgvAnkunftZeit,
             this.dgvDuratoin});
-            this.dgvVerbindungen.Location = new System.Drawing.Point(31, 279);
+            this.dgvVerbindungen.Location = new System.Drawing.Point(16, 238);
             this.dgvVerbindungen.Name = "dgvVerbindungen";
             this.dgvVerbindungen.Size = new System.Drawing.Size(724, 209);
             this.dgvVerbindungen.TabIndex = 10;
@@ -109,7 +106,7 @@
             this.gbDatumZeit.Controls.Add(this.label3);
             this.gbDatumZeit.Controls.Add(this.dtpZeit);
             this.gbDatumZeit.Controls.Add(this.dtpDate);
-            this.gbDatumZeit.Location = new System.Drawing.Point(32, 104);
+            this.gbDatumZeit.Location = new System.Drawing.Point(18, 79);
             this.gbDatumZeit.Name = "gbDatumZeit";
             this.gbDatumZeit.Size = new System.Drawing.Size(234, 143);
             this.gbDatumZeit.TabIndex = 1;
@@ -161,7 +158,7 @@
             this.gbOrt.Controls.Add(this.label1);
             this.gbOrt.Controls.Add(this.cbEndStation);
             this.gbOrt.Controls.Add(this.cbStartStatoin);
-            this.gbOrt.Location = new System.Drawing.Point(294, 104);
+            this.gbOrt.Location = new System.Drawing.Point(280, 79);
             this.gbOrt.Name = "gbOrt";
             this.gbOrt.Size = new System.Drawing.Size(239, 143);
             this.gbOrt.TabIndex = 2;
@@ -210,7 +207,7 @@
             // 
             // btnVerbindung
             // 
-            this.btnVerbindung.Location = new System.Drawing.Point(550, 174);
+            this.btnVerbindung.Location = new System.Drawing.Point(536, 149);
             this.btnVerbindung.Name = "btnVerbindung";
             this.btnVerbindung.Size = new System.Drawing.Size(205, 23);
             this.btnVerbindung.TabIndex = 6;
@@ -220,7 +217,7 @@
             // 
             // btnAbfahrtstafel
             // 
-            this.btnAbfahrtstafel.Location = new System.Drawing.Point(550, 213);
+            this.btnAbfahrtstafel.Location = new System.Drawing.Point(536, 188);
             this.btnAbfahrtstafel.Name = "btnAbfahrtstafel";
             this.btnAbfahrtstafel.Size = new System.Drawing.Size(205, 23);
             this.btnAbfahrtstafel.TabIndex = 8;
@@ -239,49 +236,20 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // tbMail
-            // 
-            this.tbMail.Location = new System.Drawing.Point(72, 253);
-            this.tbMail.Name = "tbMail";
-            this.tbMail.Size = new System.Drawing.Size(461, 20);
-            this.tbMail.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(31, 256);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Email:";
-            // 
-            // btnMail
-            // 
-            this.btnMail.Location = new System.Drawing.Point(550, 251);
-            this.btnMail.Name = "btnMail";
-            this.btnMail.Size = new System.Drawing.Size(205, 23);
-            this.btnMail.TabIndex = 9;
-            this.btnMail.Text = "Verbindung versenden";
-            this.btnMail.UseVisualStyleBackColor = true;
-            this.btnMail.Click += new System.EventHandler(this.btnMail_Click);
-            // 
             // TransportMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.ClientSize = new System.Drawing.Size(789, 534);
-            this.Controls.Add(this.btnMail);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.tbMail);
+            this.ClientSize = new System.Drawing.Size(783, 483);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnAbfahrtstafel);
             this.Controls.Add(this.btnVerbindung);
             this.Controls.Add(this.gbOrt);
             this.Controls.Add(this.gbDatumZeit);
             this.Controls.Add(this.dgvVerbindungen);
-            this.MaximumSize = new System.Drawing.Size(805, 573);
-            this.MinimumSize = new System.Drawing.Size(805, 573);
+            this.MaximumSize = new System.Drawing.Size(799, 522);
+            this.MinimumSize = new System.Drawing.Size(799, 522);
             this.Name = "TransportMain";
             this.Text = "Transport-App";
             ((System.ComponentModel.ISupportInitialize)(this.dgvVerbindungen)).EndInit();
@@ -291,7 +259,6 @@
             this.gbOrt.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -317,9 +284,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvAnkunftZeit;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvDuratoin;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox tbMail;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnMail;
     }
 }
 
