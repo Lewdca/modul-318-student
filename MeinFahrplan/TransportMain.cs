@@ -15,6 +15,9 @@ namespace MeinFahrplan
     public partial class TransportMain : Form
     {
         ITransport transport = new Transport();
+        AutoCompleteClass autoComplete = new AutoCompleteClass();
+        MailVersendenClass mailVersenden = new MailVersendenClass();
+        
 
         public TransportMain()
         {
@@ -49,64 +52,22 @@ namespace MeinFahrplan
             var myForm = new Abfahrtstafel();
             myForm.Show();
         }
-        public List<string> autoComplete(string input)
-        {
-
-            List<string> autoCompleteList = new List<string>();
-     
-            var stations = transport.GetStations(input);
-            foreach (var station in stations.StationList)
-            {
-
-                autoCompleteList.Add(station.Name);
-            }
-
-            if (autoCompleteList.Count == 0)
-            {
-                autoCompleteList.Add("Kein Resultat");
-            }
-
-            return autoCompleteList;
-        }
-        public void getStation(ComboBox box)
-        {
-            if(box.Text != "")
-            {
-                try
-                {
-                    string userInput = box.Text;
-                    box.Items.Clear();
-                    box.SelectionStart = box.Text.Length + 1;
-
-                    List<string> stations = autoComplete(userInput);
-
-                    foreach (String station in stations)
-                    {
-                        if (station != null)
-                        {
-                            box.Items.Add(station);
-                        }
-                    }
-                    if(box.Text.Length >= 2)
-                    {
-                        box.DroppedDown = true;
-                        box.Text = userInput;
-                        box.SelectionStart = box.Text.Length + 1;
-                    }
-
-                }
-                catch
-                {
-                    box.Items.Clear();
-                    box.SelectionStart = box.Text.Length + 1;
-                    box.Items.Add("Kein Resultat");
-                }
-            }      
-        }
         public void keyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode != Keys.Up && e.KeyCode != Keys.Right && e.KeyCode != Keys.Down && e.KeyCode != Keys.Left)
-                getStation((ComboBox)sender);
+                autoComplete.getStation((ComboBox)sender);
+        }
+
+        private void btnMail_Click(object sender, EventArgs e)
+        {
+            Connection connection = new Connection();
+            string mailName = tbMail.Text;
+            string mailText = $"Der Zug fährt von der Station {dgvStart.Selected.ToString()} " +
+                $"nach {dgvEnd.Selected.ToString()}" +
+                $"\nDatum/Zeit Abfahrt:{dgvDatumZeit.Selected.ToString()}" +
+                $"\nAnkunftszeit: {dgvAnkunftZeit.Selected.ToString()} ankommen";
+
+            System.Diagnostics.Process.Start($"mailto:{mailName​}?subject=SBB Fahrplan&body={​mailtext}​");
         }
     }
 }

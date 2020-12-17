@@ -14,7 +14,7 @@ namespace MeinFahrplan
 {
     public partial class Abfahrtstafel : Form
     {
-        TransportMain f = new TransportMain();
+        AutoCompleteClass autoComplete = new AutoCompleteClass();
         ITransport transport = new Transport();
         public Abfahrtstafel()
         {
@@ -40,7 +40,7 @@ namespace MeinFahrplan
         {
             if (e.KeyCode != Keys.Up && e.KeyCode != Keys.Right && e.KeyCode != Keys.Down && e.KeyCode != Keys.Left)
             {
-                f.getStation((ComboBox)sender);
+                autoComplete.getStation((ComboBox)sender);
             }
         }
     }

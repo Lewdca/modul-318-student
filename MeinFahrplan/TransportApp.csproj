@@ -52,6 +52,8 @@
     <Compile Include="Abfahrtstafel.Designer.cs">
       <DependentUpon>Abfahrtstafel.cs</DependentUpon>
     </Compile>
+    <Compile Include="AutoCompleteClass.cs" />
+    <Compile Include="MailVersendenClass.cs" />
     <Compile Include="TransportMain.cs">
       <SubType>Form</SubType>
     </Compile>

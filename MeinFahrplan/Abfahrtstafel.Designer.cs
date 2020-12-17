@@ -50,7 +50,7 @@
             this.AdgvVerbindungen.Location = new System.Drawing.Point(36, 85);
             this.AdgvVerbindungen.Name = "AdgvVerbindungen";
             this.AdgvVerbindungen.Size = new System.Drawing.Size(474, 239);
-            this.AdgvVerbindungen.TabIndex = 1;
+            this.AdgvVerbindungen.TabIndex = 2;
             // 
             // dgvDatumZeit
             // 
@@ -77,7 +77,7 @@
             this.AbtnAbfahrtstafel.Location = new System.Drawing.Point(260, 41);
             this.AbtnAbfahrtstafel.Name = "AbtnAbfahrtstafel";
             this.AbtnAbfahrtstafel.Size = new System.Drawing.Size(75, 23);
-            this.AbtnAbfahrtstafel.TabIndex = 2;
+            this.AbtnAbfahrtstafel.TabIndex = 1;
             this.AbtnAbfahrtstafel.Text = "Suchen";
             this.AbtnAbfahrtstafel.UseVisualStyleBackColor = true;
             this.AbtnAbfahrtstafel.Click += new System.EventHandler(this.AbtnAbfahrtstafel_Click);
@@ -88,7 +88,7 @@
             this.AcbStart.Location = new System.Drawing.Point(110, 41);
             this.AcbStart.Name = "AcbStart";
             this.AcbStart.Size = new System.Drawing.Size(121, 21);
-            this.AcbStart.TabIndex = 3;
+            this.AcbStart.TabIndex = 0;
             this.AcbStart.KeyUp += new System.Windows.Forms.KeyEventHandler(this.AcbStart_KeyUp);
             // 
             // label1

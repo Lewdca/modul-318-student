@@ -49,9 +49,9 @@
             this.btnVerbindung = new System.Windows.Forms.Button();
             this.btnAbfahrtstafel = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbMail = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnMail = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVerbindungen)).BeginInit();
             this.gbDatumZeit.SuspendLayout();
             this.gbOrt.SuspendLayout();
@@ -71,7 +71,7 @@
             this.dgvVerbindungen.Location = new System.Drawing.Point(31, 279);
             this.dgvVerbindungen.Name = "dgvVerbindungen";
             this.dgvVerbindungen.Size = new System.Drawing.Size(724, 209);
-            this.dgvVerbindungen.TabIndex = 0;
+            this.dgvVerbindungen.TabIndex = 10;
             // 
             // dgvDatumZeit
             // 
@@ -143,7 +143,7 @@
             this.dtpZeit.Name = "dtpZeit";
             this.dtpZeit.ShowUpDown = true;
             this.dtpZeit.Size = new System.Drawing.Size(95, 20);
-            this.dtpZeit.TabIndex = 2;
+            this.dtpZeit.TabIndex = 1;
             // 
             // dtpDate
             // 
@@ -194,7 +194,7 @@
             this.cbEndStation.Location = new System.Drawing.Point(78, 84);
             this.cbEndStation.Name = "cbEndStation";
             this.cbEndStation.Size = new System.Drawing.Size(121, 21);
-            this.cbEndStation.TabIndex = 1;
+            this.cbEndStation.TabIndex = 4;
             this.cbEndStation.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyUp);
             // 
             // cbStartStatoin
@@ -205,7 +205,7 @@
             this.cbStartStatoin.Location = new System.Drawing.Point(78, 42);
             this.cbStartStatoin.Name = "cbStartStatoin";
             this.cbStartStatoin.Size = new System.Drawing.Size(121, 21);
-            this.cbStartStatoin.TabIndex = 0;
+            this.cbStartStatoin.TabIndex = 3;
             this.cbStartStatoin.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyUp);
             // 
             // btnVerbindung
@@ -213,7 +213,7 @@
             this.btnVerbindung.Location = new System.Drawing.Point(550, 174);
             this.btnVerbindung.Name = "btnVerbindung";
             this.btnVerbindung.Size = new System.Drawing.Size(205, 23);
-            this.btnVerbindung.TabIndex = 4;
+            this.btnVerbindung.TabIndex = 6;
             this.btnVerbindung.Text = "Verbindungen suchen";
             this.btnVerbindung.UseVisualStyleBackColor = true;
             this.btnVerbindung.Click += new System.EventHandler(this.BtnVerbindung_Click);
@@ -223,7 +223,7 @@
             this.btnAbfahrtstafel.Location = new System.Drawing.Point(550, 213);
             this.btnAbfahrtstafel.Name = "btnAbfahrtstafel";
             this.btnAbfahrtstafel.Size = new System.Drawing.Size(205, 23);
-            this.btnAbfahrtstafel.TabIndex = 5;
+            this.btnAbfahrtstafel.TabIndex = 8;
             this.btnAbfahrtstafel.Text = "Abfahrtstafel";
             this.btnAbfahrtstafel.UseVisualStyleBackColor = true;
             this.btnAbfahrtstafel.Click += new System.EventHandler(this.BtnAbfahrtstafel_Click);
@@ -239,12 +239,12 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // tbMail
             // 
-            this.textBox1.Location = new System.Drawing.Point(72, 253);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(461, 20);
-            this.textBox1.TabIndex = 7;
+            this.tbMail.Location = new System.Drawing.Point(72, 253);
+            this.tbMail.Name = "tbMail";
+            this.tbMail.Size = new System.Drawing.Size(461, 20);
+            this.tbMail.TabIndex = 5;
             // 
             // label5
             // 
@@ -255,14 +255,15 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Email:";
             // 
-            // button1
+            // btnMail
             // 
-            this.button1.Location = new System.Drawing.Point(550, 251);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(205, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Verbindung versenden";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnMail.Location = new System.Drawing.Point(550, 251);
+            this.btnMail.Name = "btnMail";
+            this.btnMail.Size = new System.Drawing.Size(205, 23);
+            this.btnMail.TabIndex = 9;
+            this.btnMail.Text = "Verbindung versenden";
+            this.btnMail.UseVisualStyleBackColor = true;
+            this.btnMail.Click += new System.EventHandler(this.btnMail_Click);
             // 
             // TransportMain
             // 
@@ -270,9 +271,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(789, 534);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnMail);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbMail);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnAbfahrtstafel);
             this.Controls.Add(this.btnVerbindung);
@@ -316,9 +317,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvAnkunftZeit;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvDuratoin;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbMail;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnMail;
     }
 }
 

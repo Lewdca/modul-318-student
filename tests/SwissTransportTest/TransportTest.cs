@@ -2,7 +2,7 @@
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
-
+    using SwissTransport;
     using SwissTransport.Core;
 
     /// <summary>
@@ -12,7 +12,7 @@
     public class TransportTest
     {
         private ITransport testee;
-
+        
         [TestMethod]
         public void Locations()
         {
@@ -42,6 +42,11 @@
               var connections = this.testee.GetConnections("Sursee", "Luzern",time ,date, 16 );
                 
               Assert.IsNotNull(connections);
-          }       
+          }
+        [TestMethod]
+          public void Mail()
+        {
+            
+        }
     }
 }
