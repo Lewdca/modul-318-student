@@ -1,6 +1,6 @@
 ﻿namespace MeinFahrplan
 {
-    partial class Form1
+    partial class TransportMain
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TransportMain));
             this.dgvVerbindungen = new System.Windows.Forms.DataGridView();
             this.dgvDatumZeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +51,9 @@
             this.btnVerbindung = new System.Windows.Forms.Button();
             this.btnAbfahrtstafel = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVerbindungen)).BeginInit();
             this.gbDatumZeit.SuspendLayout();
             this.gbOrt.SuspendLayout();
@@ -108,7 +111,7 @@
             this.gbDatumZeit.Controls.Add(this.label3);
             this.gbDatumZeit.Controls.Add(this.dtpZeit);
             this.gbDatumZeit.Controls.Add(this.dtpDate);
-            this.gbDatumZeit.Location = new System.Drawing.Point(30, 117);
+            this.gbDatumZeit.Location = new System.Drawing.Point(32, 104);
             this.gbDatumZeit.Name = "gbDatumZeit";
             this.gbDatumZeit.Size = new System.Drawing.Size(234, 143);
             this.gbDatumZeit.TabIndex = 1;
@@ -162,7 +165,7 @@
             this.gbOrt.Controls.Add(this.label1);
             this.gbOrt.Controls.Add(this.cbEndStation);
             this.gbOrt.Controls.Add(this.cbStartStatoin);
-            this.gbOrt.Location = new System.Drawing.Point(292, 117);
+            this.gbOrt.Location = new System.Drawing.Point(294, 104);
             this.gbOrt.Name = "gbOrt";
             this.gbOrt.Size = new System.Drawing.Size(292, 143);
             this.gbOrt.TabIndex = 2;
@@ -231,7 +234,7 @@
             // 
             // btnVerbindung
             // 
-            this.btnVerbindung.Location = new System.Drawing.Point(605, 162);
+            this.btnVerbindung.Location = new System.Drawing.Point(605, 169);
             this.btnVerbindung.Name = "btnVerbindung";
             this.btnVerbindung.Size = new System.Drawing.Size(136, 23);
             this.btnVerbindung.TabIndex = 4;
@@ -241,7 +244,7 @@
             // 
             // btnAbfahrtstafel
             // 
-            this.btnAbfahrtstafel.Location = new System.Drawing.Point(605, 199);
+            this.btnAbfahrtstafel.Location = new System.Drawing.Point(605, 210);
             this.btnAbfahrtstafel.Name = "btnAbfahrtstafel";
             this.btnAbfahrtstafel.Size = new System.Drawing.Size(135, 23);
             this.btnAbfahrtstafel.TabIndex = 5;
@@ -251,26 +254,59 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(1, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(785, 91);
+            this.pictureBox1.Size = new System.Drawing.Size(490, 57);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // Form1
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(72, 253);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(514, 20);
+            this.textBox1.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(31, 256);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Email:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(605, 249);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(136, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Verbindung versenden";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // TransportMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 537);
+            this.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.ClientSize = new System.Drawing.Size(789, 534);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnAbfahrtstafel);
             this.Controls.Add(this.btnVerbindung);
             this.Controls.Add(this.gbOrt);
             this.Controls.Add(this.gbDatumZeit);
             this.Controls.Add(this.dgvVerbindungen);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.MaximumSize = new System.Drawing.Size(805, 573);
+            this.MinimumSize = new System.Drawing.Size(805, 573);
+            this.Name = "TransportMain";
+            this.Text = "Transport-App";
             ((System.ComponentModel.ISupportInitialize)(this.dgvVerbindungen)).EndInit();
             this.gbDatumZeit.ResumeLayout(false);
             this.gbDatumZeit.PerformLayout();
@@ -278,6 +314,7 @@
             this.gbOrt.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -305,6 +342,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvAnkunftZeit;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvDuratoin;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
     }
 }
 

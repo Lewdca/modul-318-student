@@ -14,7 +14,7 @@ namespace MeinFahrplan
 {
     public partial class Abfahrtstafel : Form
     {
-        Form1 f = new Form1();
+        TransportMain f = new TransportMain();
         ITransport transport = new Transport();
         public Abfahrtstafel()
         {

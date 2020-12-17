@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace MeinFahrplan
 {
-    public partial class Form1 : Form
+    public partial class TransportMain : Form
     {
         ITransport transport = new Transport();
 
-        public Form1()
+        public TransportMain()
         {
             InitializeComponent();
         }
@@ -74,10 +74,11 @@ namespace MeinFahrplan
             {
                 try
                 {
+                    string userInput = box.Text;
                     box.Items.Clear();
                     box.SelectionStart = box.Text.Length + 1;
 
-                    List<string> stations = autoComplete(box.Text);
+                    List<string> stations = autoComplete(userInput);
 
                     foreach (String station in stations)
                     {
@@ -86,7 +87,13 @@ namespace MeinFahrplan
                             box.Items.Add(station);
                         }
                     }
-                    box.DroppedDown = true;
+                    if(box.Text.Length >= 2)
+                    {
+                        box.DroppedDown = true;
+                        box.Text = userInput;
+                        box.SelectionStart = box.Text.Length + 1;
+                    }
+
                 }
                 catch
                 {

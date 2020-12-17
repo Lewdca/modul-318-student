@@ -78,7 +78,7 @@
             this.AbtnAbfahrtstafel.Name = "AbtnAbfahrtstafel";
             this.AbtnAbfahrtstafel.Size = new System.Drawing.Size(75, 23);
             this.AbtnAbfahrtstafel.TabIndex = 2;
-            this.AbtnAbfahrtstafel.Text = "Abfahrtstafel";
+            this.AbtnAbfahrtstafel.Text = "Suchen";
             this.AbtnAbfahrtstafel.UseVisualStyleBackColor = true;
             this.AbtnAbfahrtstafel.Click += new System.EventHandler(this.AbtnAbfahrtstafel_Click);
             // 
